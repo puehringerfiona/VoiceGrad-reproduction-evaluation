@@ -115,9 +115,9 @@ Train with the Arctic-compatible recipe:
 ```bash
 cd voicegrad/baselines/repos/StarGAN-VC
 
-& "C:\Program Files\Git\bin\bash.exe" ./recipes/run_train_arctic_4spk.sh `
-  -g 0 `
-  -d ../../shared/stargan_arctic_4spk/training `
+./recipes/run_train_arctic_4spk.sh \
+  -g 0 \
+  -d ../../shared/stargan_arctic_4spk/training \
   -e voicegrad_arctic_4spk
 ```
 
@@ -127,6 +127,15 @@ From Windows Terminal PowerShell, launch the same recipe through WSL or Git Bash
 cd voicegrad/baselines/repos/StarGAN-VC
 
 bash ./recipes/run_train_arctic_4spk.sh `
+  -g 0 `
+  -d ../../shared/stargan_arctic_4spk/training `
+  -e voicegrad_arctic_4spk
+```
+
+If PowerShell resolves `bash` to the WSL launcher but no Linux distro is installed, call Git Bash explicitly:
+
+```powershell
+& "C:\Program Files\Git\bin\bash.exe" ./recipes/run_train_arctic_4spk.sh `
   -g 0 `
   -d ../../shared/stargan_arctic_4spk/training `
   -e voicegrad_arctic_4spk
@@ -143,6 +152,13 @@ Then convert the test set:
 
 ```powershell
 bash ./recipes/run_test_arctic_4spk.sh `
+  -g 0 `
+  -d ../../shared/stargan_arctic_4spk/test `
+  -e voicegrad_arctic_4spk
+```
+
+```powershell
+& "C:\Program Files\Git\bin\bash.exe" ./recipes/run_test_arctic_4spk.sh `
   -g 0 `
   -d ../../shared/stargan_arctic_4spk/test `
   -e voicegrad_arctic_4spk
@@ -284,7 +300,7 @@ Download the pretrained PPG-VC assets from the repo README. The wrapper expects:
 
 - PPG model files in `repos/ppg-vc/conformer_ppg_model/en_conformer_ctc_att/`.
 - Speaker encoder checkpoint at `repos/ppg-vc/speaker_encoder/ckpt/pretrained_bak_5805000.pt`.
-- HiFi-GAN files in the repo’s expected `vocoders` location.
+- HiFi-GAN files in the repo's expected `vocoders` location.
 - A PPG2Mel config and checkpoint path passed on the command line.
 
 You can download the upstream Google Drive folder with:
