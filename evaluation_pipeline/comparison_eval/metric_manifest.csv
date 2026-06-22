@@ -1,0 +1,5 @@
+metric,column,meaning,better
+MCD,mcd_db,Mel cepstral distortion between converted and target speech,lower
+LFC,lfc,Correlation of log-F0 contour between converted and target speech,higher
+CER,cer,Character error rate from ASR transcript versus reference text,lower
+pMOS/MOS,pmos or mos,Predicted or human mean opinion score for naturalness/audio quality,higher
